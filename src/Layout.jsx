@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Home, BookOpen, Target, Calendar, Settings, LogOut } from 'lucide-react';
 import { api } from '@/api/db';
-import NotificationManager from '@/Components/notifications/NotificationManager';
+import NotificationManager from '@/components/notifications/NotificationManager';
 
 export default function Layout({ children, currentPageName }) {
   const [user, setUser] = useState(null);
