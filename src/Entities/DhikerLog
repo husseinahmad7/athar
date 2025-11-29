@@ -1,0 +1,52 @@
+{
+  "name": "DhikrLog",
+  "type": "object",
+  "properties": {
+    "dhikr_id": {
+      "type": "string",
+      "description": "Reference to Dhikr entity"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of completion"
+    },
+    "hijri_date": {
+      "type": "string",
+      "description": "Hijri date string"
+    },
+    "count_completed": {
+      "type": "number",
+      "description": "Number of repetitions completed"
+    },
+    "target_count": {
+      "type": "number",
+      "description": "Target repetitions"
+    },
+    "completion_percentage": {
+      "type": "number",
+      "description": "Percentage completed"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "voice",
+        "auto_timer"
+      ],
+      "description": "How it was counted"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "Time taken in seconds"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "dhikr_id",
+    "date",
+    "count_completed"
+  ]
+}

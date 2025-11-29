@@ -1,0 +1,90 @@
+{
+  "name": "UserSettings",
+  "type": "object",
+  "properties": {
+    "theme": {
+      "type": "string",
+      "enum": [
+        "emerald",
+        "gold",
+        "midnight",
+        "pearl",
+        "custom"
+      ],
+      "default": "emerald"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "ar",
+        "en"
+      ],
+      "default": "ar"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "User location latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "User location longitude"
+    },
+    "timezone": {
+      "type": "string",
+      "default": "Asia/Riyadh"
+    },
+    "hijri_adjustment": {
+      "type": "number",
+      "default": 0,
+      "description": "Days adjustment based on moon sighting"
+    },
+    "prayer_calculation_method": {
+      "type": "string",
+      "enum": [
+        "mwl",
+        "isna",
+        "egypt",
+        "makkah",
+        "karachi",
+        "tehran",
+        "jafari"
+      ],
+      "default": "mwl"
+    },
+    "fajr_angle": {
+      "type": "number",
+      "default": 12,
+      "description": "Nautical twilight angle for Fajr"
+    },
+    "maghrib_angle": {
+      "type": "number",
+      "default": 6,
+      "description": "Civil twilight angle for Maghrib"
+    },
+    "notifications_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "sound_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "vibration_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "voice_recognition_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "current_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "longest_streak": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": []
+}

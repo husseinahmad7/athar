@@ -1,0 +1,37 @@
+{
+  "name": "CrescentSighting",
+  "type": "object",
+  "properties": {
+    "gregorian_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Gregorian date of sighting"
+    },
+    "hijri_month": {
+      "type": "string",
+      "description": "Hijri month name"
+    },
+    "hijri_year": {
+      "type": "number",
+      "description": "Hijri year"
+    },
+    "is_sighted": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether crescent was sighted"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of sighting"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "gregorian_date",
+    "hijri_month",
+    "hijri_year"
+  ]
+}

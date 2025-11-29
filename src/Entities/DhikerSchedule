@@ -1,0 +1,119 @@
+{
+  "name": "DhikrSchedule",
+  "type": "object",
+  "properties": {
+    "dhikr_id": {
+      "type": "string",
+      "description": "Reference to Dhikr entity"
+    },
+    "schedule_type": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly",
+        "specific_dates",
+        "prayer_time",
+        "custom_period"
+      ],
+      "description": "Type of schedule"
+    },
+    "days_of_week": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "description": "For weekly schedules"
+    },
+    "days_of_month": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "For monthly schedules (1-31)"
+    },
+    "hijri_months": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "muharram",
+          "safar",
+          "rabi_al_awwal",
+          "rabi_al_thani",
+          "jumada_al_awwal",
+          "jumada_al_thani",
+          "rajab",
+          "shaban",
+          "ramadan",
+          "shawwal",
+          "dhul_qidah",
+          "dhul_hijjah"
+        ]
+      },
+      "description": "Specific Islamic months"
+    },
+    "specific_dates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      },
+      "description": "Specific dates"
+    },
+    "prayer_times": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "fajr",
+          "sunrise",
+          "dhuhr",
+          "asr",
+          "maghrib",
+          "isha",
+          "after_fajr",
+          "after_dhuhr",
+          "after_asr",
+          "after_maghrib",
+          "after_isha"
+        ]
+      },
+      "description": "Tied to prayer times"
+    },
+    "custom_period_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "custom_period_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "reminder_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "reminder_minutes_before": {
+      "type": "number",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "dhikr_id",
+    "schedule_type"
+  ]
+}

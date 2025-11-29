@@ -1,0 +1,60 @@
+{
+  "name": "Dhikr",
+  "type": "object",
+  "properties": {
+    "arabic_text": {
+      "type": "string",
+      "description": "\u0627\u0644\u0646\u0635 \u0627\u0644\u0639\u0631\u0628\u064a \u0644\u0644\u0630\u0643\u0631"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "morning",
+        "evening",
+        "after_prayer",
+        "before_sleep",
+        "general",
+        "quran",
+        "salawat",
+        "tasbih",
+        "dua",
+        "ziyarah"
+      ],
+      "description": "Category of dhikr"
+    },
+    "repetitions": {
+      "type": "number",
+      "default": 1,
+      "description": "Recommended number of repetitions"
+    },
+    "reward": {
+      "type": "string",
+      "description": "Spiritual reward or benefit"
+    },
+    "source": {
+      "type": "string",
+      "description": "Hadith or Quranic reference"
+    },
+    "priority": {
+      "type": "number",
+      "default": 0,
+      "description": "User-defined priority order"
+    },
+    "audio_url": {
+      "type": "string",
+      "description": "Audio recitation URL"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_favorite": {
+      "type": "boolean",
+      "default": false,
+      "description": "Mark as favorite for quick access"
+    }
+  },
+  "required": [
+    "arabic_text"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "IslamicContent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Content title"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "hadith",
+        "tafsir",
+        "fiqh",
+        "wisdom",
+        "biography"
+      ],
+      "description": "Type of content"
+    },
+    "arabic_text": {
+      "type": "string",
+      "description": "Arabic content"
+    },
+    "translation": {
+      "type": "string",
+      "description": "Translation"
+    },
+    "source": {
+      "type": "string",
+      "description": "Reference source"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "display_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When to display this content"
+    }
+  },
+  "required": [
+    "title",
+    "content_type",
+    "arabic_text"
+  ]
+}

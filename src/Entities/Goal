@@ -1,0 +1,91 @@
+{
+  "name": "Goal",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Goal title"
+    },
+    "description": {
+      "type": "string"
+    },
+    "goal_type": {
+      "type": "string",
+      "enum": [
+        "daily_streak",
+        "dhikr_streak",
+        "total_count",
+        "specific_dhikr",
+        "combination",
+        "monthly_target"
+      ],
+      "description": "Type of goal - daily_streak: consecutive days (any dhikr), dhikr_streak: consecutive days (specific dhikr), total_count: cumulative count, specific_dhikr: specific dhikr count, combination: multiple dhikrs, monthly_target: monthly count"
+    },
+    "dhikr_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Related dhikr IDs"
+    },
+    "target_value": {
+      "type": "number",
+      "description": "Target to achieve - meaning varies by goal_type: daily_streak=days, total_count=total repetitions, specific_dhikr=repetitions, combination=repetitions, monthly_target=repetitions per month"
+    },
+    "current_value": {
+      "type": "number",
+      "default": 0,
+      "description": "Current progress - for daily_streak: current streak days, others: current count"
+    },
+    "streak_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Current streak count for daily_streak goals"
+    },
+    "daily_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progress for current day (resets daily)"
+    },
+    "monthly_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progress for current month (resets monthly)"
+    },
+    "last_activity_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last date when progress was made"
+    },
+    "last_reset_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last date when daily/monthly reset occurred"
+    },
+    "current_month": {
+      "type": "string",
+      "description": "Current month being tracked (YYYY-MM format)"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "reward_message": {
+      "type": "string",
+      "description": "Message when goal is achieved"
+    }
+  },
+  "required": [
+    "title",
+    "goal_type",
+    "target_value"
+  ]
+}
